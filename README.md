@@ -18,6 +18,35 @@ app工程build.gradle文件添加 `android-aspectj` 插件:
 apply plugin: 'com.uphyca.android-aspectj'
 ```
 
+需要继承BaseActivity或者BaseFragment
+```groovy
+public class MainActivity extends BaseActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        checkPermission();
+    }
+
+    @PermissionGrantAnnotation(grantPermissionFlag = PermissionUtil.REQUEST_CODE_PERMISSION_STORAGE)
+    private void checkPermission(){
+        File file = new File(Environment.getExternalStorageDirectory()+"/test");
+        if(file.exists()){
+            file.delete();
+        }
+
+        try {
+            file.createNewFile();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+
 License
 -------
 
