@@ -1,6 +1,3 @@
-# AndroidMPermission
-android m权限获取，利用aspectj实现一行注解获取权限
-[![wercker status](https://app.wercker.com/status/abab3a54a2dd310784896ceca989a462/s "wercker status")](https://app.wercker.com/project/bykey/abab3a54a2dd310784896ceca989a462)
 
 android m权限获取
 ==================================
@@ -8,15 +5,15 @@ android m权限获取
 android m权限获取，利用aspectj实现一行注解获取权限
 
 
-Usage
+使用
 -----
 
-Add the plugin to your `buildscript`'s `dependencies` section:
+主工程目录的build.gradle文件中添加插件`buildscript`'s `dependencies` :
 ```groovy
 classpath 'com.uphyca.gradle:gradle-android-aspectj-plugin:0.9.14'
 ```
 
-Apply the `android-aspectj` plugin:
+app工程build.gradle文件添加 `android-aspectj` 插件:
 ```groovy
 apply plugin: 'com.uphyca.android-aspectj'
 ```
