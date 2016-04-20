@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PermissionLibrary</string>
+    <!-- 权限 -->
+    <string name="permission_phone_state_message">您未允许应用获取手机状态权限，可在系统设置中开启</string>
+    <string name="permission_location_message">您未允许应用获取定位权限，可在系统设置中开启</string>
+    <string name="permission_storage_message">您未允许应用获取存储权限，可在系统设置中开启</string>
+    <string name="permission_camera_message">您未允许应用获取相机权限，可在系统设置中开启</string>
+    <string name="permission_voice_message">您未允许应用获取录音权限，可在系统设置中开启</string>
+    <string name="permission_btn_ok">去设置</string>
+    <string name="permission_btn_cancel">暂不</string>
+</resources>
