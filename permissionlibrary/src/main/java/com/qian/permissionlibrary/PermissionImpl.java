@@ -101,16 +101,16 @@ public abstract class PermissionImpl implements PermissionInterface {
         if(getStateRational()){
             popPermissionDialog();
         }else{
-            boolean phoneStateRational = PermissionUtil.shouldPhoneStateRational(activity, getRequestPermission());
-            PermissionUtil.storeShouldPhoneStateRational(activity, getRationalFlag(), phoneStateRational);
+            boolean phoneStateRational = PermissionUtil.shouldShowRequestPermissionRationale(activity, getRequestPermission());
+            PermissionUtil.storeShouldRequestPermissionRationale(activity, getRationalFlag(), phoneStateRational);
             PermissionUtil.requestPermission(activity, getRequestPermission(), getMaskRequestCode(getRequestCode(), mFromFragment));
         }
     }
 
     public boolean getStateRational(){
         //用于判断never ask again
-        boolean mStateShouldShowRational = PermissionUtil.getShouldPhoneStateRational(activity, getRationalFlag());
-        boolean phoneStateRational = PermissionUtil.shouldPhoneStateRational(activity, getRequestPermission());
+        boolean mStateShouldShowRational = PermissionUtil.getShouldRequestPermissionRationale(activity, getRationalFlag());
+        boolean phoneStateRational = PermissionUtil.shouldShowRequestPermissionRationale(activity, getRequestPermission());
         if(mStateShouldShowRational && !phoneStateRational){
             return true;
         }
@@ -123,7 +123,7 @@ public abstract class PermissionImpl implements PermissionInterface {
     }
 
     private void popPermissionDialog(){
-        PermissionUtil.popPermissionDialog(activity, getMaskRequestCode(getRequestCode(), mFromFragment)
+        PermissionUtil.showPermissionDialog(activity, getMaskRequestCode(getRequestCode(), mFromFragment)
                 , isForcePermission(), getRationalString());
     }
 

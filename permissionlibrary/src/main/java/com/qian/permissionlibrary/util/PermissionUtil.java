@@ -51,7 +51,7 @@ public class PermissionUtil {
         return true;
     }
 
-    public static boolean shouldPhoneStateRational(Activity activity, String permission) {
+    public static boolean shouldShowRequestPermissionRationale(Activity activity, String permission) {
         if (null == activity) {
             return false;
         }
@@ -88,8 +88,8 @@ public class PermissionUtil {
         ActivityCompat.requestPermissions(activity, permissions, requestCode);
     }
 
-    public static void popPermissionDialog(final Activity activity,final int requestCode
-            ,final boolean force,String msg) {
+    public static void showPermissionDialog(final Activity activity, final int requestCode
+            , final boolean force, String msg) {
         if (activity == null || activity.isFinishing()) {
             return;
         }
@@ -120,7 +120,7 @@ public class PermissionUtil {
         builder.create().show();
     }
 
-    public static boolean getShouldPhoneStateRational(Context context,String flag){
+    public static boolean getShouldRequestPermissionRationale(Context context, String flag){
         if (null == context) {
             return false;
         }
@@ -128,7 +128,7 @@ public class PermissionUtil {
         return statusSharedPreferences.getBoolean(flag, false);
     }
 
-    public static void storeShouldPhoneStateRational(Context context,String flag,boolean rational){
+    public static void storeShouldRequestPermissionRationale(Context context, String flag, boolean rational){
         if (null == context) {
             return;
         }
